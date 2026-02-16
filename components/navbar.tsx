@@ -43,8 +43,8 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        {/* Desktop Navigation - Aligned Right */}
+        <nav className="hidden md:flex items-center space-x-8 ml-auto">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -56,15 +56,15 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center space-x-4">
+        {/* Desktop CTA - Commented out for v1 */}
+        {/* <div className="hidden md:flex items-center space-x-4">
           <Button variant="ghost" asChild>
             <Link href="/login">Sign In</Link>
           </Button>
           <Button asChild>
             <Link href="/signup">Get Started</Link>
           </Button>
-        </div>
+        </div> */}
 
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -86,7 +86,8 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t">
+              {/* Mobile CTA - Commented out for v1 */}
+              {/* <div className="flex flex-col space-y-2 pt-4 border-t">
                 <Button variant="ghost" asChild>
                   <Link href="/login" onClick={() => setIsOpen(false)}>
                     Sign In
@@ -97,7 +98,7 @@ export function Navbar() {
                     Get Started
                   </Link>
                 </Button>
-              </div>
+              </div> */}
             </nav>
           </SheetContent>
         </Sheet>
