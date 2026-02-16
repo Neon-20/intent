@@ -62,10 +62,10 @@ export default async function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {/* Jobs Card */}
-            <ScrollReveal delay={0}>
-            <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-primary/10 bg-gradient-to-br from-background to-primary/5">
+            <ScrollReveal delay={0} className="h-full">
+            <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-primary/10 bg-gradient-to-br from-background to-primary/5 h-full flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full" />
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 shadow-sm">
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
@@ -74,7 +74,7 @@ export default async function Home() {
                   Access curated job listings from top companies. Filter by role, location, and experience level to find your perfect match.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="mt-auto">
                 <Button variant="ghost" asChild className="group">
                   <Link href="/jobs">
                     Explore Jobs
@@ -86,11 +86,11 @@ export default async function Home() {
             </ScrollReveal>
 
             {/* Resume Review Card */}
-            <ScrollReveal delay={100}>
-            <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-primary/20 bg-gradient-to-br from-primary/5 to-background">
+            <ScrollReveal delay={100} className="h-full">
+            <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-primary/20 bg-gradient-to-br from-primary/5 to-background h-full flex flex-col">
               <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/15 to-transparent rounded-bl-full" />
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-primary/10 to-transparent rounded-tr-full" />
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/30 to-primary/15 flex items-center justify-center mb-4 shadow-md">
                   <FileText className="h-6 w-6 text-primary" />
                 </div>
@@ -99,7 +99,7 @@ export default async function Home() {
                   Get expert feedback on your resume. Our professionals help you stand out and land more interviews.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="mt-auto">
                 <Button variant="ghost" asChild className="group">
                   <Link href="/services">
                     Get Started
@@ -111,10 +111,10 @@ export default async function Home() {
             </ScrollReveal>
 
             {/* Career Guidance Card */}
-            <ScrollReveal delay={200}>
-            <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-primary/10 bg-gradient-to-br from-background to-primary/5">
+            <ScrollReveal delay={200} className="h-full">
+            <Card className="relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-primary/10 bg-gradient-to-br from-background to-primary/5 h-full flex flex-col">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full" />
-              <CardHeader>
+              <CardHeader className="flex-grow">
                 <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 shadow-sm">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
@@ -123,7 +123,7 @@ export default async function Home() {
                   One-on-one consultations with career experts. Get personalized advice to navigate your career path.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="mt-auto">
                 <Button variant="ghost" asChild className="group">
                   <Link href="/services">
                     Book Session
