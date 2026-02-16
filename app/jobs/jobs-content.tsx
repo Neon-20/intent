@@ -21,8 +21,8 @@ export function JobsContent({ initialJobs, categories, searchParams }: JobsConte
   // Add animation key that changes on mount to trigger animations on refresh
   const [animationKey, setAnimationKey] = useState(0)
 
-  // Sidebar collapse state
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
+  // Sidebar collapse state - default to collapsed (closed)
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true)
 
   // Parse initial filters from URL
   const initialFilters = useMemo(() => {

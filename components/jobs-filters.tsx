@@ -114,16 +114,6 @@ export function JobsFilters({
             hasActiveFilters={hasActiveFilters}
           />
         </div>
-
-        {/* Collapsed State Indicator */}
-        {isCollapsed && (
-          <div className="flex flex-col gap-2 items-center py-4">
-            <SlidersHorizontal className="h-5 w-5 text-muted-foreground" />
-            <span className="text-xs text-muted-foreground writing-mode-vertical-rl rotate-180">
-              Filters
-            </span>
-          </div>
-        )}
       </div>
     </>
   )
