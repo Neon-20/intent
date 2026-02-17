@@ -85,13 +85,15 @@ export function JobsFilters({
 
       {/* Desktop Sidebar */}
       <div className="hidden lg:block relative">
-        {/* Collapse/Expand Button */}
+        {/* Collapse/Expand Button - Always visible */}
         {onToggleCollapse && (
           <Button
             variant="ghost"
             size="icon"
             onClick={onToggleCollapse}
-            className="absolute -right-3 top-0 z-10 h-8 w-8 rounded-full border bg-background shadow-sm hover:bg-accent"
+            className={`absolute top-0 z-20 h-8 w-8 rounded-full border bg-background shadow-sm hover:bg-accent transition-all duration-300 ${
+              isCollapsed ? 'left-0' : 'right-0'
+            }`}
             title={isCollapsed ? "Expand filters" : "Collapse filters"}
           >
             {isCollapsed ? (
@@ -103,17 +105,19 @@ export function JobsFilters({
         )}
 
         {/* Sidebar Content */}
-        <div className={`transition-all duration-300 ${isCollapsed ? 'w-0 overflow-hidden opacity-0' : 'w-full opacity-100'}`}>
-          <FilterContent
-            filters={filters}
-            categories={categories}
-            search={search}
-            onSearchChange={handleSearchChange}
-            onToggleFilter={toggleArrayFilter}
-            onClearFilters={clearFilters}
-            hasActiveFilters={hasActiveFilters}
-          />
-        </div>
+        {!isCollapsed && (
+          <div className="pr-4">
+            <FilterContent
+              filters={filters}
+              categories={categories}
+              search={search}
+              onSearchChange={handleSearchChange}
+              onToggleFilter={toggleArrayFilter}
+              onClearFilters={clearFilters}
+              hasActiveFilters={hasActiveFilters}
+            />
+          </div>
+        )}
       </div>
     </>
   )

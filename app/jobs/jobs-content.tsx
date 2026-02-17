@@ -122,11 +122,11 @@ export function JobsContent({ initialJobs, categories, searchParams }: JobsConte
   }
 
   return (
-    <div className={`grid grid-cols-1 gap-6 transition-all duration-300 ${
-      isSidebarCollapsed ? 'lg:grid-cols-[auto_1fr]' : 'lg:grid-cols-4'
-    }`}>
+    <div className="flex gap-6">
       {/* Filters Sidebar */}
-      <div className={isSidebarCollapsed ? '' : 'lg:col-span-1'}>
+      <div className={`shrink-0 transition-all duration-300 ease-in-out ${
+        isSidebarCollapsed ? 'w-10' : 'w-64'
+      }`}>
         <JobsFilters
           filters={filters}
           categories={categories}
@@ -138,7 +138,7 @@ export function JobsContent({ initialJobs, categories, searchParams }: JobsConte
       </div>
 
       {/* Jobs List */}
-      <div className={isSidebarCollapsed ? '' : 'lg:col-span-3'}>
+      <div className="flex-1 min-w-0">
         {/* Results Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-semibold">
