@@ -110,6 +110,16 @@ export function JobsContent({ initialJobs, categories, searchParams }: JobsConte
       result.sort((a, b) => new Date(b.posted_at).getTime() - new Date(a.posted_at).getTime())
     }
 
+    // Always prioritize Mercor jobs at the top
+    result.sort((a, b) => {
+      const aIsMercor = a.company.toLowerCase() === 'mercor'
+      const bIsMercor = b.company.toLowerCase() === 'mercor'
+
+      if (aIsMercor && !bIsMercor) return -1
+      if (!aIsMercor && bIsMercor) return 1
+      return 0
+    })
+
     return result
   }, [initialJobs, filters])
 
