@@ -1,10 +1,11 @@
 import { Suspense } from 'react'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Briefcase, Building2, MapPin, TrendingUp } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import { JobsContent } from './jobs-content'
 import { JobCardSkeleton } from '@/components/job-card'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 
 export const metadata = {
   title: 'Browse Jobs',
@@ -33,25 +34,46 @@ export default async function JobsPage({
   return (
     <div className="min-h-screen bg-background">
       {/* Header with gradient background */}
-      <div className="relative border-b bg-gradient-to-b from-primary/5 via-primary/3 to-background overflow-hidden">
+      <div className="relative border-b bg-gradient-to-b from-primary/5 to-background overflow-hidden">
         {/* Decorative gradient blobs */}
         <div className="absolute top-0 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl opacity-40" />
         <div className="absolute bottom-0 left-20 w-80 h-80 bg-primary/8 rounded-full blur-3xl opacity-30" />
 
-        <div className="relative container mx-auto px-4 py-8 md:py-12">
+        <div className="relative container mx-auto px-4 py-8">
           {/* Back to Home Link */}
           <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span>Back to Stepping Stones</span>
           </Link>
 
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Find Your Next <span className="text-primary">Opportunity</span>
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Browse through our curated job listings and find the perfect role for you
-            </p>
+          <div className="flex items-center justify-between flex-wrap gap-6">
+            {/* Left: Heading */}
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                Find Your Next <span className="text-primary">Opportunity</span>
+              </h1>
+              <p className="text-muted-foreground">
+                Browse curated job listings and find your perfect role
+              </p>
+            </div>
+
+            {/* Right: Quick Stats */}
+            <div className="flex items-center gap-6">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">500+</div>
+                <div className="text-xs text-muted-foreground">Active Jobs</div>
+              </div>
+              <div className="h-10 w-px bg-border" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">50+</div>
+                <div className="text-xs text-muted-foreground">Companies</div>
+              </div>
+              <div className="h-10 w-px bg-border" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">Remote</div>
+                <div className="text-xs text-muted-foreground">Friendly</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
