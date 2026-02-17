@@ -28,7 +28,7 @@ const socialLinks = [
     name: 'WhatsApp Community',
     description: 'Join our WhatsApp community for job alerts, career tips, and networking opportunities.',
     icon: MessageCircle,
-    href: process.env.NEXT_PUBLIC_WHATSAPP_COMMUNITY_LINK || '#',
+    href: 'https://whatsapp.com/channel/0029VaeqWgx7oQhlSsTo1F0F',
     color: 'bg-primary',
     hoverColor: 'hover:bg-primary/90',
     primary: true,
@@ -37,7 +37,7 @@ const socialLinks = [
     name: 'Instagram',
     description: 'Follow us for career inspiration, success stories, and daily motivation.',
     icon: Instagram,
-    href: process.env.NEXT_PUBLIC_INSTAGRAM_LINK || '#',
+    href: '#',
     color: 'bg-primary',
     hoverColor: 'hover:bg-primary/90',
   },
@@ -45,7 +45,7 @@ const socialLinks = [
     name: 'LinkedIn',
     description: 'Connect with us professionally and stay updated on industry insights.',
     icon: Linkedin,
-    href: process.env.NEXT_PUBLIC_LINKEDIN_LINK || '#',
+    href: '#',
     color: 'bg-primary',
     hoverColor: 'hover:bg-primary/90',
   },
@@ -53,7 +53,7 @@ const socialLinks = [
     name: 'Twitter/X',
     description: 'Get real-time updates on new job postings and career opportunities.',
     icon: Twitter,
-    href: process.env.NEXT_PUBLIC_TWITTER_LINK || '#',
+    href: '#',
     color: 'bg-primary',
     hoverColor: 'hover:bg-primary/90',
   },
@@ -98,7 +98,7 @@ export default function CommunityPage() {
                 className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6"
               >
                 <a
-                  href={process.env.NEXT_PUBLIC_WHATSAPP_COMMUNITY_LINK || '#'}
+                  href="https://whatsapp.com/channel/0029VaeqWgx7oQhlSsTo1F0F"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -118,9 +118,9 @@ export default function CommunityPage() {
               {socialLinks.map((social, index) => {
                 const Icon = social.icon
                 return (
-                  <ScrollReveal key={social.name} delay={index * 100}>
-                  <Card className="hover:shadow-lg transition-shadow">
-                    <CardHeader>
+                  <ScrollReveal key={social.name} delay={index * 100} className="h-full">
+                  <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                    <CardHeader className="flex-grow">
                       <div className={`p-3 rounded-full ${social.color} w-fit mb-3`}>
                         <Icon className="h-6 w-6 text-white" />
                       </div>
@@ -129,7 +129,7 @@ export default function CommunityPage() {
                         {social.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="mt-auto">
                       <Button
                         asChild
                         variant="outline"
