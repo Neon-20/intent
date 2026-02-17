@@ -103,9 +103,9 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {resumeServices.map((service, index) => (
-              <ScrollReveal key={service.id} delay={index * 100}>
+              <ScrollReveal key={service.id} delay={index * 100} className="h-full">
               <Card
-                className={`relative ${
+                className={`relative h-full flex flex-col ${
                   service.popular ? 'border-primary shadow-lg scale-105' : ''
                 }`}
               >
@@ -114,15 +114,13 @@ export default function ServicesPage() {
                     Most Popular
                   </Badge>
                 )}
-                <CardHeader>
+                <CardHeader className="flex-grow">
                   <CardTitle className="text-2xl">{service.name}</CardTitle>
                   <div className="text-3xl font-bold text-primary">
                     {service.price}
                   </div>
                   <CardDescription>{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 pt-4">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-2">
                         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -130,6 +128,8 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                </CardHeader>
+                <CardContent className="mt-auto pt-0">
                   <ServiceRequestForm serviceType={service.serviceType} serviceName={service.name} />
                 </CardContent>
               </Card>
