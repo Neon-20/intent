@@ -41,7 +41,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-10 h-10 flex-shrink-0">
                 <Image
-                  src="/logo.svg"
+                  src="/icon.svg"
                   alt="Stepping Stones Logo"
                   width={40}
                   height={40}

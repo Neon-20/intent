@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   creator: "Stepping Stones",
   publisher: "Stepping Stones",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://steppingstones.com'),
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
